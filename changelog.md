@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.20.0-alpha.0 (2022-09-02)
+---------------------------
+
+* This package is forked from @curveball/core and will be the future 'core'
+  engine for curveball. This new core is smaller, and has all node-specific
+  APIs removed, so it may be used in other server APIs as well.
+* Added `Application.fetch()`, which lets you use the standard `Request` and
+  `Response` classes to execute requests in curveball.
+
+
 0.19.0 (2022-04-25)
 -------------------
 
