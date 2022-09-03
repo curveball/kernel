@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.20.0-alpha.1 (2022-09-03)
+---------------------------
+
+* Exporting `HeadersInterface`, `HeadersObject`, `headerHelpers`.
+* No longer default-exporting Application.
+
+
 0.20.0-alpha.0 (2022-09-02)
 ---------------------------
 
