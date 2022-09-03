@@ -14,7 +14,7 @@ import ResponseInterface from './response';
  * * json
  * * application/*
  */
-export function is(message: RequestInterface | ResponseInterface, type: string): boolean {
+export function is(message: RequestInterface<any> | ResponseInterface<any>, type: string): boolean {
 
   const messageType = message.type;
 
