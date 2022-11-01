@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.20.1 (2022-11-01)
+-------------------
+
+* Added `setGlobalOrigin` and `getGlobalOrigin` functions, this lets users
+  get direct access to the 'origin detection algoritm' and avoid reimplementing
+  it.
+
+
 0.20.0 (2022-09-03)
 -------------------
 
