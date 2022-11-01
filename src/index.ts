@@ -23,4 +23,9 @@ export {
   HeadersObject
 } from './headers';
 
+export {
+  getGlobalOrigin,
+  setGlobalOrigin,
+} from './global-origin';
+
 export * as headerHelpers from './header-helpers';

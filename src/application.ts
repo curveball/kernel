@@ -13,7 +13,7 @@ import {
   curveballResponseToFetchResponse,
   fetchRequestToCurveballRequest
 } from './fetch-util';
-
+import { getGlobalOrigin } from './global-origin';
 
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -171,16 +171,7 @@ export default class Application extends EventEmitter {
       return this._origin;
     }
 
-    if (process.env.CURVEBALL_ORIGIN) {
-      return process.env.CURVEBALL_ORIGIN;
-    }
-
-    if (process.env.PUBLIC_URI) {
-      return new URL(process.env.PUBLIC_URI).origin;
-    }
-
-    const port = process.env.PORT ? +process.env.PORT : 80;
-    return 'http://localhost' + (port!==80?':' + port : '');
+    return getGlobalOrigin();
 
   }
 
