@@ -24,7 +24,7 @@ export {
 } from './headers';
 
 export {
-  getGlobalOrgin,
+  getGlobalOrigin,
   setGlobalOrigin,
 } from './global-origin';
 
