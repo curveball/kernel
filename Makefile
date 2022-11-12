@@ -4,7 +4,7 @@ SOURCE_FILES:=$(shell find src/ -type f -name '*.ts')
 all: build
 
 .PHONY:build
-build: dist/build
+build: cjs/build esm/build
 
 .PHONY:test
 test:
@@ -30,9 +30,15 @@ start: build
 
 .PHONY:clean
 clean:
-	rm -r dist
+	rm -r dist esm cjs
 
-dist/build: $(SOURCE_FILES)
-	node_modules/.bin/tsc
+cjs/build: $(SOURCE_FILES)
+	npx tsc
 	@# Creating a small file to keep track of the last build time
-	touch dist/build
+	touch cjs/build
+
+
+esm/build: $(SOURCE_FILES)
+	npx tsc --module es2022 --outDir esm/
+	@# Creating a small file to keep track of the last build time
+	touch esm/build
