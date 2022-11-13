@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.21.0-beta.1 (2022-11-13)
+--------------------------
+
+* `cjs` / `esm` folders were missing from package gzip.
+
+
 0.21.0-beta.0 (2022-11-13)
 --------------------------
 
