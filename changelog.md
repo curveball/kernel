@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.21.0-beta.0 (2022-11-13)
+--------------------------
+
+* This package now supports ESM. Both CommonJS and ESM versions are provided
+  in the npm package.
+
+
 0.20.1 (2022-11-01)
 -------------------
 
