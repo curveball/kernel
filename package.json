@@ -23,7 +23,8 @@
   "files": [
     "package.json",
     "README.md",
-    "dist",
+    "esm",
+    "csj",
     "LICENSE",
     "src"
   ],
