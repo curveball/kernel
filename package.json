@@ -4,7 +4,7 @@
   "description": "Curveball is a framework writting in Typescript for Node.js",
   "main": "cjs/index.js",
   "exports": {
-    ".": {
+    "./": {
       "require": "cjs/index.js",
       "import": "esm/index.js"
     }
