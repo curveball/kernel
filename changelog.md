@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.21.0-beta.6 (2022-11-14)
+--------------------------
+
+* With a fresh perspective on a new day, this is a likely fix for 'commonjs'
+  but perhaps not yet ESM.
+
+
 0.21.0-beta.5 (2022-11-13)
 --------------------------
 

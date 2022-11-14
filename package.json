@@ -5,7 +5,8 @@
   "main": "cjs/index.js",
   "exports": {
     "require": "./cjs/index.js",
-    "import": "./esm/index.js"
+    "import": "./esm/index.js",
+    "export": "./esm/index.js"
   },
   "scripts": {
     "prepublishOnly": "make build",
@@ -22,7 +23,7 @@
     "package.json",
     "README.md",
     "esm",
-    "csj",
+    "cjs",
     "LICENSE",
     "src"
   ],

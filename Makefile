@@ -34,11 +34,13 @@ clean:
 
 cjs/build: $(SOURCE_FILES)
 	npx tsc
+	echo '{"type": "commonjs"}' > cjs/package.json
 	@# Creating a small file to keep track of the last build time
 	touch cjs/build
 
 
 esm/build: $(SOURCE_FILES)
 	npx tsc --module es2022 --outDir esm/
+	echo '{"type": "module"}' > cjs/package.json
 	@# Creating a small file to keep track of the last build time
 	touch esm/build
