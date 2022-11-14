@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.21.0-beta.7 (2022-11-14)
+--------------------------
+
+* CommonJS was still broken due to a bad copy paste.
+* ESM actually too.
+
+
 0.21.0-beta.6 (2022-11-14)
 --------------------------
 
