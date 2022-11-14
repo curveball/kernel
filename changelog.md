@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.21.0-beta.5 (2022-11-13)
+--------------------------
+
+* Attempt 6 at making this work. I think this is the one.
+
+
 0.21.0-beta.4 (2022-11-13)
 --------------------------
 
