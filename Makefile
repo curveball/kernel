@@ -41,6 +41,6 @@ cjs/build: $(SOURCE_FILES)
 
 esm/build: $(SOURCE_FILES)
 	npx tsc --module es2022 --outDir esm/
-	echo '{"type": "module"}' > cjs/package.json
+	echo '{"type": "module"}' > esm/package.json
 	@# Creating a small file to keep track of the last build time
 	touch esm/build
