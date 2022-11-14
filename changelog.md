@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.21.0-beta.4 (2022-11-13)
+--------------------------
+
+* Attempt 5 at making this work. Exports aren't picked up yet.
+
+
 0.21.0-beta.3 (2022-11-13)
 --------------------------
 
