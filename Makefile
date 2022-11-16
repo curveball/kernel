@@ -33,7 +33,7 @@ clean:
 	rm -r dist esm cjs
 
 cjs/build: $(SOURCE_FILES)
-	npx tsc
+	npx tsc --module commonjs --outDir cjs/
 	echo '{"type": "commonjs"}' > cjs/package.json
 	@# Creating a small file to keep track of the last build time
 	touch cjs/build

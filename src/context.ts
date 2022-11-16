@@ -1,8 +1,9 @@
-import { Middleware } from './application';
-import { HeadersInterface, HeadersObject } from './headers';
-import Request from './request';
-import Response from './response';
 import * as WebSocket from 'ws';
+
+import { Middleware } from './application.js';
+import { HeadersInterface, HeadersObject } from './headers.js';
+import Request from './request.js';
+import Response from './response.js';
 
 /**
  * The Context object encapsulates a single HTTP request.

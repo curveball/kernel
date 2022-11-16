@@ -1,23 +1,29 @@
-import { EventEmitter } from 'events';
-
+import { EventEmitter } from 'node:events';
 import { isHttpError } from '@curveball/http-errors';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
+import * as url from 'node:url';
 
-import { Context } from './context';
-import { HeadersInterface, HeadersObject } from './headers';
-import MemoryRequest from './memory-request';
-import MemoryResponse from './memory-response';
-import NotFoundMw from './middleware/not-found';
-import { Request as CurveballRequest } from './request';
-import { Response as CurveballResponse } from './response';
+import { Context } from './context.js';
+import { HeadersInterface, HeadersObject } from './headers.js';
+import MemoryRequest from './memory-request.js';
+import MemoryResponse from './memory-response.js';
+import NotFoundMw from './middleware/not-found.js';
+import { Request as CurveballRequest } from './request.js';
+import { Response as CurveballResponse } from './response.js';
 import {
   curveballResponseToFetchResponse,
   fetchRequestToCurveballRequest
-} from './fetch-util';
-import { getGlobalOrigin } from './global-origin';
+} from './fetch-util.js';
+import { getGlobalOrigin } from './global-origin.js';
 
+const _dirname = typeof __dirname !== 'undefined'
+  ? __dirname
+  : path.dirname(url.fileURLToPath(import.meta.url));
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const pkg = require('../package.json');
+const pkg = JSON.parse(
+  fs.readFileSync(path.join(_dirname, '../package.json'), 'utf-8')
+);
 
 /**
  * The middleware-call Symbol is a special symbol that might exist as a

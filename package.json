@@ -3,6 +3,7 @@
   "version": "0.21.0-beta.7",
   "description": "Curveball is a framework writting in Typescript for Node.js",
   "main": "cjs/index.js",
+  "type": "module",
   "exports": {
     "require": "./cjs/index.js",
     "import": "./esm/index.js",
@@ -75,8 +76,10 @@
   },
   "mocha": {
     "require": [
-      "ts-node/register",
       "./test/polyfills.js"
+    ],
+    "loader": [
+      "ts-node/esm"
     ],
     "recursive": true,
     "extension": [

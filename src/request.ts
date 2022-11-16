@@ -2,9 +2,10 @@ import * as accepts from 'accepts';
 import * as http from 'http';
 import { Readable } from 'stream';
 import * as url from 'url';
-import { is, parsePrefer } from './header-helpers';
-import { HeadersInterface } from './headers';
-import { Headers } from './headers';
+
+import { is, parsePrefer } from './header-helpers.js';
+import { HeadersInterface } from './headers.js';
+import { Headers } from './headers.js';
 
 export type Encoding = 'utf-8' | 'ascii' | 'hex';
 

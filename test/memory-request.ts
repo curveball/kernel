@@ -1,6 +1,5 @@
 import { expect } from 'chai';
-import { Headers } from '../src/headers';
-import { MemoryRequest } from '../src/memory-request';
+import { Headers, MemoryRequest } from '../src/index.js';
 
 function getReq() {
 
