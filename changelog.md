@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.21.0-beta.8 (2022-11-14)
+--------------------------
+
+* Almost all tests are passing, aside from anything that uses 'accept'.
+
+
 0.21.0-beta.7 (2022-11-14)
 --------------------------
 
