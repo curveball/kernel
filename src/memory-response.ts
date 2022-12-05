@@ -1,5 +1,5 @@
-import { Headers } from './headers';
-import { Response, Body } from './response';
+import { Headers } from './headers.js';
+import { Response, Body } from './response.js';
 
 export class MemoryResponse<T = Body> extends Response<T> {
 

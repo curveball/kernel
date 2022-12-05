@@ -2,7 +2,8 @@
 /node_modules
 
 # typescript output
-/dist
+/esm
+/cjs
 
 # vim
 .*.swp

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Application, middlewareCall, MemoryRequest, Context } from '../src';
+import { Application, middlewareCall, MemoryRequest, Context } from '../src/index.js';
 import * as fs from 'fs';
 import { Writable } from 'stream';
 
@@ -68,7 +68,7 @@ describe('Application', () => {
   it('should work with Readable stream responses', async () => {
     const app = new Application();
     app.use((ctx, next) => {
-      ctx.response.body = fs.createReadStream(__filename);
+      ctx.response.body = fs.createReadStream(import.meta.url);
     });
 
     const response = await app.fetch(new Request('http://0.0.0.0:5555'));

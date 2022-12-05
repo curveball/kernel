@@ -1,6 +1,7 @@
 import { Readable } from 'stream';
-import { Headers, HeadersInterface, HeadersObject } from './headers';
-import { Request, Encoding } from './request';
+
+import { Headers, HeadersInterface, HeadersObject } from './headers.js';
+import { Request, Encoding } from './request.js';
 
 export class MemoryRequest<T> extends Request<T> {
 
