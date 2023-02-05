@@ -55,7 +55,7 @@
     "node-fetch": "^2.6.7",
     "nyc": "^15.1.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.1.5"
+    "typescript": "^5.0.0-beta"
   },
   "types": "dist/",
   "nyc": {
