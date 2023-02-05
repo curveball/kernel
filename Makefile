@@ -50,7 +50,7 @@ cjs/build: $(SOURCE_FILES)
 
 esm/build: $(SOURCE_FILES)
 	npx tsc --module es2022 --outDir esm/
-	sed -i 's/const VERSION.*$$/const VERSION = '\''Curveball\/$(VERSION) \(esm\)'\'';/g' cjs/application.js
+	sed -i 's/const VERSION.*$$/const VERSION = '\''Curveball\/$(VERSION) \(esm\)'\'';/g' esm/application.js
 	echo '{"type": "module"}' > esm/package.json
 	@# Creating a small file to keep track of the last build time
 	touch esm/build
