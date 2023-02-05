@@ -1,4 +1,5 @@
-import * as accepts from 'accepts';
+// @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/64233
+import Accepts from 'accepts';
 import * as http from 'http';
 import { Readable } from 'stream';
 import * as url from 'url';
@@ -147,7 +148,7 @@ export abstract class Request<T = unknown> {
       }
     };
 
-    const result = accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
+    const result = new Accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
     return result === false ? null : result;
 
   }
