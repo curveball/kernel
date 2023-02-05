@@ -1,7 +1,6 @@
 import { expect } from 'chai';
 import { Application, middlewareCall, MemoryRequest, Context } from '../src/index.js';
-import * as fs from 'fs';
-import { Writable } from 'stream';
+import { Writable, Readable } from 'node:stream';
 
 const VERSION_STRING = 'Curveball/dev';
 
@@ -61,13 +60,13 @@ describe('Application', () => {
   it('should work with Readable stream responses', async () => {
     const app = new Application();
     app.use((ctx, next) => {
-      ctx.response.body = fs.createReadStream(import.meta.url);
+      ctx.response.body = Readable.from(Buffer.from('hello'));
     });
 
     const response = await app.fetch(new Request('http://0.0.0.0:5555'));
     const body = await response.text();
 
-    expect(body.substring(0, 6)).to.equal('import');
+    expect(body.substring(0, 6)).to.equal('hello');
     expect(response.headers.get('server')).to.equal(VERSION_STRING);
     expect(response.status).to.equal(200);
 
