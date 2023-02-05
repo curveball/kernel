@@ -1,4 +1,5 @@
 SOURCE_FILES:=$(shell find src/ -type f -name '*.ts')
+VERSION:=$(shell node -e "process.stdout.write(require('./package.json').version)")
 
 .PHONY:all
 all: build
@@ -34,6 +35,7 @@ clean:
 
 cjs/build: $(SOURCE_FILES)
 	npx tsc --module commonjs --outDir cjs/
+	sed -i 's/const VERSION.*$$/const VERSION = '\''Curveball\/$(VERSION) \(cjs\)'\'';/g' cjs/application.js
 	echo '{"type": "commonjs"}' > cjs/package.json
 	@# Creating a small file to keep track of the last build time
 	touch cjs/build
@@ -41,6 +43,7 @@ cjs/build: $(SOURCE_FILES)
 
 esm/build: $(SOURCE_FILES)
 	npx tsc --module es2022 --outDir esm/
+	sed -i 's/const VERSION.*$$/const VERSION = '\''Curveball\/$(VERSION) \(esm\)'\'';/g' cjs/application.js
 	echo '{"type": "module"}' > esm/package.json
 	@# Creating a small file to keep track of the last build time
 	touch esm/build

@@ -1,8 +1,5 @@
 import { EventEmitter } from 'node:events';
 import { isHttpError } from '@curveball/http-errors';
-import * as fs from 'node:fs';
-import * as path from 'node:path';
-import * as url from 'node:url';
 
 import { Context } from './context.js';
 import { HeadersInterface, HeadersObject } from './headers.js';
@@ -17,13 +14,12 @@ import {
 } from './fetch-util.js';
 import { getGlobalOrigin } from './global-origin.js';
 
-const _dirname = typeof __dirname !== 'undefined'
-  ? __dirname
-  : path.dirname(url.fileURLToPath(import.meta.url));
-
-const pkg = JSON.parse(
-  fs.readFileSync(path.join(_dirname, '../package.json'), 'utf-8')
-);
+/**
+ * Package version
+ *
+ * This line gets automatically replaced during the build phase
+ */
+const VERSION = 'Curveball/dev';
 
 /**
  * The middleware-call Symbol is a special symbol that might exist as a
@@ -91,7 +87,7 @@ export default class Application extends EventEmitter {
    * Handles a single request and calls all middleware.
    */
   async handle(ctx: Context): Promise<void> {
-    ctx.response.headers.set('Server', 'curveball/' + pkg.version);
+    ctx.response.headers.set('Server', VERSION);
     ctx.response.type = 'application/hal+json';
     await invokeMiddlewares(ctx, [...this.middlewares, NotFoundMw]);
   }

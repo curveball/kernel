@@ -12,6 +12,7 @@
         "sourceMap": true,
         "outDir": "esm",
         "baseUrl": ".",
+        "resolveJsonModule": true,
         "paths": {
             "*": [
                 "src/types/*"
