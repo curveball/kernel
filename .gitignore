@@ -5,6 +5,9 @@
 /esm
 /cjs
 
+# Directory used for running tests in CommonJS mode
+/cjs-test
+
 # vim
 .*.swp
 

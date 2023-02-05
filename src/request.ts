@@ -1,5 +1,5 @@
-// @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/64233
-import Accepts from 'accepts';
+
+import * as AcceptsImp from 'accepts';
 import * as http from 'http';
 import { Readable } from 'stream';
 import * as url from 'url';
@@ -9,6 +9,12 @@ import { HeadersInterface } from './headers.js';
 import { Headers } from './headers.js';
 
 export type Encoding = 'utf-8' | 'ascii' | 'hex';
+
+/**
+ * We gotta do this ugly thing to make this work in CommonJS and ESM
+ */
+// @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/64233
+const Accepts = AcceptsImp.default ?? AcceptsImp;
 
 /**
  * This interface represents an incoming server request.
@@ -147,6 +153,7 @@ export abstract class Request<T = unknown> {
         accept: this.headers.get('Accept')
       }
     };
+
 
     const result = new Accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
     return result === false ? null : result;

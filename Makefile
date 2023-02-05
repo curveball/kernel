@@ -9,29 +9,36 @@ build: cjs/build esm/build
 
 .PHONY:test
 test:
-	node_modules/.bin/nyc node_modules/.bin/mocha
+	npx nyc mocha
+
+.PHONY:test-cjs
+test-cjs:
+	mkdir -p cjs-test
+	cd test; npx tsc --outdir ../cjs-test
+	echo '{"type": "commonjs"}' > cjs-test/package.json
+	cd cjs-test; npx mocha --no-package
 
 .PHONY:lint
 lint:
-	node_modules/.bin/eslint --quiet 'src/*.ts' 'test/*.ts'
+	npx eslint --quiet 'src/**/*.ts' 'test/**/*.ts'
 
 .PHONY:lint-fix
 lint-fix: fix
 
 .PHONY:fix
 fix:
-	node_modules/.bin/eslint --quiet 'src/**/*.ts' 'test/**/*.ts' --fix
+	npx eslint --quiet 'src/**/*.ts' 'test/**/*.ts' --fix
 
 .PHONY:watch
 watch:
-	node_modules/.bin/tsc --watch
+	npx tsc --watch
 
 .PHONY:start
 start: build
 
 .PHONY:clean
 clean:
-	rm -r dist esm cjs
+	rm -r dist esm cjs cjs-test
 
 cjs/build: $(SOURCE_FILES)
 	npx tsc --module commonjs --outDir cjs/
