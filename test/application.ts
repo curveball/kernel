@@ -72,7 +72,7 @@ describe('Application', () => {
 
   });
 
-  it('should work with a callback resonse body', async () => {
+  it('should work with a callback response body', async () => {
     const app = new Application();
     app.use((ctx, next) => {
       ctx.response.body = (stream: Writable) => {
