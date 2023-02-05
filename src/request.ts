@@ -1,8 +1,7 @@
-
 import * as AcceptsImp from 'accepts';
-import * as http from 'http';
-import { Readable } from 'stream';
-import * as url from 'url';
+import * as http from 'node:http';
+import { Readable } from 'node:stream';
+import * as url from 'node:url';
 
 import { is, parsePrefer } from './header-helpers.js';
 import { HeadersInterface } from './headers.js';

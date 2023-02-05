@@ -1,4 +1,4 @@
-import { Readable, Writable } from 'stream';
+import { Readable, Writable } from 'node:stream';
 
 import { Middleware } from './application.js';
 import { is } from './header-helpers.js';

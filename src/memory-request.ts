@@ -1,4 +1,4 @@
-import { Readable } from 'stream';
+import { Readable } from 'node:stream';
 
 import { Headers, HeadersInterface, HeadersObject } from './headers.js';
 import { Request, Encoding } from './request.js';
