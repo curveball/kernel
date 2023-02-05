@@ -38,7 +38,7 @@ start: build
 
 .PHONY:clean
 clean:
-	rm -r dist esm cjs cjs-test
+	rm -rf dist esm cjs cjs-test
 
 cjs/build: $(SOURCE_FILES)
 	npx tsc --module commonjs --outDir cjs/
