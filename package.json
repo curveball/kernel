@@ -1,6 +1,6 @@
 {
   "name": "@curveball/kernel",
-  "version": "0.21.0-beta.9",
+  "version": "0.21.0-beta.10",
   "description": "Curveball is a framework writting in Typescript for Node.js",
   "main": "cjs/index.js",
   "type": "module",
