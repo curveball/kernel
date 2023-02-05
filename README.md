@@ -12,3 +12,4 @@ The kernel provides the following objects:
 
 If you are just getting started with Curveball, the best place to learn is
 the [Curveball website](https://curveballjs.org/docs/getting-started).
+
