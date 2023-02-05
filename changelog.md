@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.21.0-beta.11 (2022-11-14)
+--------------------------
+
+* Tests are now run for CommonJS and ESM environments.
+* New version string: `Curveball/0.21.0 (esm)` and `Curveball/0.21 (cjs)` depending on how the library was used.
+* Add a ugly workaround for the `accept` library.
+
+
 0.21.0-beta.8 (2022-11-14)
 --------------------------
 
