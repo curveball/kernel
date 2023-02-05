@@ -14,7 +14,7 @@ test:
 .PHONY:test-cjs
 test-cjs:
 	mkdir -p cjs-test
-	cd test; npx tsc --outdir ../cjs-test
+	cd test; npx tsc --module commonjs --outdir ../cjs-test
 	echo '{"type": "commonjs"}' > cjs-test/package.json
 	cd cjs-test; npx mocha --no-package
 
