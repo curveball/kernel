@@ -1,7 +1,8 @@
-import { MemoryRequest as CurveballRequest } from './memory-request';
-import { Response as CurveballResponse } from './response';
-import { Headers as CurveballHeaders } from './headers';
 import { PassThrough, Readable, Writable } from 'stream';
+
+import { MemoryRequest as CurveballRequest } from './memory-request.js';
+import { Response as CurveballResponse } from './response.js';
+import { Headers as CurveballHeaders } from './headers.js';
 
 export async function fetchRequestToCurveballRequest(request: Request, origin: string): Promise<CurveballRequest<unknown>> {
 

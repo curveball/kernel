@@ -1,12 +1,19 @@
-import * as accepts from 'accepts';
-import * as http from 'http';
-import { Readable } from 'stream';
-import * as url from 'url';
-import { is, parsePrefer } from './header-helpers';
-import { HeadersInterface } from './headers';
-import { Headers } from './headers';
+import * as AcceptsImp from 'accepts';
+import * as http from 'node:http';
+import { Readable } from 'node:stream';
+import * as url from 'node:url';
+
+import { is, parsePrefer } from './header-helpers.js';
+import { HeadersInterface } from './headers.js';
+import { Headers } from './headers.js';
 
 export type Encoding = 'utf-8' | 'ascii' | 'hex';
+
+/**
+ * We gotta do this ugly thing to make this work in CommonJS and ESM
+ */
+// @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/64233
+const Accepts = AcceptsImp.default ?? AcceptsImp;
 
 /**
  * This interface represents an incoming server request.
@@ -146,7 +153,8 @@ export abstract class Request<T = unknown> {
       }
     };
 
-    const result = accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
+
+    const result = new Accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
     return result === false ? null : result;
 
   }

@@ -1,5 +1,5 @@
-import { is, splitHeader, parsePrefer } from '../src/header-helpers';
-import MemoryRequest from '../src/memory-request';
+import { is, splitHeader, parsePrefer } from '../src/header-helpers.js';
+import { MemoryRequest } from '../src/index.js';
 import { expect } from 'chai';
 
 describe('Header helpers', () => {

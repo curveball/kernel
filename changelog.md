@@ -1,6 +1,71 @@
 Changelog
 =========
 
+0.21.0-beta.11 (2022-11-14)
+--------------------------
+
+* Tests are now run for CommonJS and ESM environments.
+* New version string: `Curveball/0.21.0 (esm)` and `Curveball/0.21 (cjs)` depending on how the library was used.
+* Add a ugly workaround for the `accept` library.
+
+
+0.21.0-beta.8 (2022-11-14)
+--------------------------
+
+* Almost all tests are passing, aside from anything that uses 'accept'.
+
+
+0.21.0-beta.7 (2022-11-14)
+--------------------------
+
+* CommonJS was still broken due to a bad copy paste.
+* ESM actually too.
+
+
+0.21.0-beta.6 (2022-11-14)
+--------------------------
+
+* With a fresh perspective on a new day, this is a likely fix for 'commonjs'
+  but perhaps not yet ESM.
+
+
+0.21.0-beta.5 (2022-11-13)
+--------------------------
+
+* Attempt 6 at making this work. I think this is the one.
+
+
+0.21.0-beta.4 (2022-11-13)
+--------------------------
+
+* Attempt 5 at making this work. Exports aren't picked up yet.
+
+
+0.21.0-beta.3 (2022-11-13)
+--------------------------
+
+* Incorrect export again!
+
+
+0.21.0-beta.2 (2022-11-13)
+--------------------------
+
+* Fix `package.json` `exports` property for ESM.
+
+
+0.21.0-beta.1 (2022-11-13)
+--------------------------
+
+* `cjs` / `esm` folders were missing from package gzip.
+
+
+0.21.0-beta.0 (2022-11-13)
+--------------------------
+
+* This package now supports ESM. Both CommonJS and ESM versions are provided
+  in the npm package.
+
+
 0.20.1 (2022-11-01)
 -------------------
 

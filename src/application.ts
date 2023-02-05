@@ -1,23 +1,25 @@
-import { EventEmitter } from 'events';
-
+import { EventEmitter } from 'node:events';
 import { isHttpError } from '@curveball/http-errors';
 
-import { Context } from './context';
-import { HeadersInterface, HeadersObject } from './headers';
-import MemoryRequest from './memory-request';
-import MemoryResponse from './memory-response';
-import NotFoundMw from './middleware/not-found';
-import { Request as CurveballRequest } from './request';
-import { Response as CurveballResponse } from './response';
+import { Context } from './context.js';
+import { HeadersInterface, HeadersObject } from './headers.js';
+import MemoryRequest from './memory-request.js';
+import MemoryResponse from './memory-response.js';
+import NotFoundMw from './middleware/not-found.js';
+import { Request as CurveballRequest } from './request.js';
+import { Response as CurveballResponse } from './response.js';
 import {
   curveballResponseToFetchResponse,
   fetchRequestToCurveballRequest
-} from './fetch-util';
-import { getGlobalOrigin } from './global-origin';
+} from './fetch-util.js';
+import { getGlobalOrigin } from './global-origin.js';
 
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const pkg = require('../package.json');
+/**
+ * Package version
+ *
+ * This line gets automatically replaced during the build phase
+ */
+const VERSION = 'Curveball/dev';
 
 /**
  * The middleware-call Symbol is a special symbol that might exist as a
@@ -85,7 +87,7 @@ export default class Application extends EventEmitter {
    * Handles a single request and calls all middleware.
    */
   async handle(ctx: Context): Promise<void> {
-    ctx.response.headers.set('Server', 'curveball/' + pkg.version);
+    ctx.response.headers.set('Server', VERSION);
     ctx.response.type = 'application/hal+json';
     await invokeMiddlewares(ctx, [...this.middlewares, NotFoundMw]);
   }
