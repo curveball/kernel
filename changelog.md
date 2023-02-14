@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.21.0 (2023-02-13)
+-------------------
+
+* Now has a ESM and CommonJS build.
+* New version string: `Curveball/0.21.0 (esm)` and `Curveball/0.21 (cjs)`
+  depending on how the library was used.
+
+
 0.21.0-beta.11 (2023-02-05)
 ---------------------------
 
