@@ -12,6 +12,7 @@
     "prepublishOnly": "make build",
     "test": "make test",
     "lint": "make lint",
+    "fix": "make fix",
     "tsc": "tsc",
     "build": "make build"
   },
@@ -32,7 +33,9 @@
     "framework",
     "nodejs",
     "typescript",
-    "push"
+    "push",
+    "curveball",
+    "http2"
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
