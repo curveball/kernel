@@ -19,7 +19,7 @@ import { getGlobalOrigin } from './global-origin.js';
  *
  * This line gets automatically replaced during the build phase
  */
-const VERSION = 'Curveball/dev';
+export const VERSION = 'Curveball/dev';
 
 /**
  * The middleware-call Symbol is a special symbol that might exist as a
