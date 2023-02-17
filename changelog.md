@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.21.2 (????-??-??)
+0.21.2 (2023-02-17)
 -------------------
 
 * Version string was broken for CJS build.
