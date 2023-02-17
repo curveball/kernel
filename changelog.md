@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.21.1 (????-??-??)
+-------------------
+
+* Export the package version
+
+
 0.21.0 (2023-02-13)
 -------------------
 
@@ -13,7 +19,8 @@ Changelog
 ---------------------------
 
 * Tests are now run for CommonJS and ESM environments.
-* New version string: `Curveball/0.21.0 (esm)` and `Curveball/0.21 (cjs)` depending on how the library was used.
+* New version string: `Curveball/0.21.0 (esm)` and `Curveball/0.21 (cjs)`
+  depending on how the library was used.
 * Add a ugly workaround for the `accept` library.
 
 
@@ -70,16 +77,15 @@ Changelog
 0.21.0-beta.0 (2022-11-13)
 --------------------------
 
-* This package now supports ESM. Both CommonJS and ESM versions are provided
-  in the npm package.
+* This package now supports ESM. Both CommonJS and ESM versions are provided in
+  the npm package.
 
 
 0.20.1 (2022-11-01)
 -------------------
 
-* Added `setGlobalOrigin` and `getGlobalOrigin` functions, this lets users
-  get direct access to the 'origin detection algoritm' and avoid reimplementing
-  it.
+* Added `setGlobalOrigin` and `getGlobalOrigin` functions, this lets users get
+  direct access to the 'origin detection algoritm' and avoid reimplementing it.
 
 
 0.20.0 (2022-09-03)
@@ -111,17 +117,17 @@ Changelog
 * Now requires Node 14.
 * `Application`, `Context`, `Request` and `Response` now have a `origin`
   property. This defaults defaults to `http://localhost`. This can be
-  overridden by setting `Application.origin`, or setting a
-  `CURVEBALL_ORIGIN` environment variable. `PUBLIC_URI` also works, but
-  it's mainly a fallback for earlier examples and recommendations.
-* `Request` and `Context` now have a `absoluteUrl` property. This is
-  calculated based on the request path and the `origin`.
-* BC Break: Due to the new `origin` property, all `Request` and
-  `Response` classes now have an extra constructor argument. This means
-  if you ever manually constructed any of these, there's a small change
-  you'll need to make. Typescript should point all these problems!
-* If `CURVEBALL_TRUSTPROXY` is set, `request.ip()` will trust proxies
-  by default, and return the ip of the real client instead of the proxy.
+  overridden by setting `Application.origin`, or setting a `CURVEBALL_ORIGIN`
+  environment variable. `PUBLIC_URI` also works, but it's mainly a fallback for
+  earlier examples and recommendations.
+* `Request` and `Context` now have a `absoluteUrl` property. This is calculated
+  based on the request path and the `origin`.
+* BC Break: Due to the new `origin` property, all `Request` and `Response`
+  classes now have an extra constructor argument. This means if you ever
+  manually constructed any of these, there's a small change you'll need to
+  make. Typescript should point all these problems!
+* If `CURVEBALL_TRUSTPROXY` is set, `request.ip()` will trust proxies by
+  default, and return the ip of the real client instead of the proxy.
 
 
 0.18.0 (2022-04-16)
@@ -130,19 +136,20 @@ Changelog
 Identical release as the previous alpha.
 
 
-0.18.0.alpha.0 (2022-04-09)
+
+0.18.0-alpha.0 (2022-04-09)
 ---------------------------
 
 * The `Context` interface has been removed, and the `BaseContext` class is
-  renamed to `Context`. This is a BC break, but should only be an issue if
-  you used the `Context` interface directly. `BaseContext` is still
-  exported but simply aliased to `Context`. This alias will be removed from
-  a future version. This change should make ite asier to use interface
-  declaration merging to extend Context.
+  renamed to `Context`. This is a BC break, but should only be an issue if you
+  used the `Context` interface directly. `BaseContext` is still exported but
+  simply aliased to `Context`. This alias will be removed from a future
+  version. This change should make ite asier to use interface declaration
+  merging to extend Context.
 * The `ws` dependency has been updated to version 8. There are some [breaking
   changes][ws8] in this release. The most likely you'll hit is that incoming
-  messages are now of type `Buffer` instead of `string`. Check out the
-  [ws changelog][ws8] for more details.
+  messages are now of type `Buffer` instead of `string`. Check out the [ws
+  changelog][ws8] for more details.
 
 
 0.17.0 (2022-02-08)
@@ -153,6 +160,7 @@ Identical release as the previous alpha.
 * JSON is now pretty-printed by default.
 
 Happy birthday Mom!
+
 
 0.16.4 (2022-01-05)
 -------------------
@@ -168,6 +176,7 @@ Happy birthday Mom!
 * Make file update
 * Updated dependencies
 
+
 0.16.2 (2021-02-18)
 -------------------
 
@@ -177,8 +186,8 @@ Happy birthday Mom!
 0.16.1 (2021-02-01)
 -------------------
 
-* Request.body is no longer optional, which will help with typing. It can
-  still be explicitly set to `null`.
+* Request.body is no longer optional, which will help with typing. It can still
+  be explicitly set to `null`.
 
 
 0.16.0 (2021-01-30)
@@ -206,10 +215,11 @@ Happy birthday Mom!
 0.14.3 (2020-09-23)
 -------------------
 
-* #155 - `listen` and `listenWs` now both have a second `host` argument to
- bind to a specific interface. (@Nicholaiii)
+* #155 - `listen` and `listenWs` now both have a second `host` argument to bind
+  to a specific interface. (@Nicholaiii)
 * #145 - `request.headers` and `response.headers` now have a `getMany()`
- function to get a list of header values for a given header name. (@Nicholaiii)
+  function to get a list of header values for a given header name.
+  (@Nicholaiii)
 
 
 0.14.2 (2020-07-14)
@@ -222,6 +232,7 @@ Happy birthday Mom!
 -------------------
 
 * types ws package is now non-devDependency
+
 
 0.14.0 (2020-07-13)
 -------------------
@@ -303,8 +314,8 @@ Happy birthday Mom!
 0.9.1 (2019-09-19)
 ------------------
 
-* The server now sets a `application/hal+json` content-type if nothing else
-  was set. This fixes a regression from 0.9.0.
+* The server now sets a `application/hal+json` content-type if nothing else was
+  set. This fixes a regression from 0.9.0.
 
 
 0.9.0 (2019-09-13)
@@ -340,8 +351,8 @@ Happy birthday Mom!
 0.8.1 (2018-11-01)
 ------------------
 
-* Now exporting an `invokeMiddleware` function that can be used to
-  chain and call mutltiple middlewares.
+* Now exporting an `invokeMiddleware` function that can be used to chain and
+  call mutltiple middlewares.
 * Application will now by default throw a `NotFound` exception if nothing
   handled a HTTP request.
 
@@ -380,9 +391,9 @@ Happy birthday Mom!
 0.5.0 (2018-08-31)
 ------------------
 
-* #74: Added `method`, `path`, `status`, `accepts`, `push`, `sendInformational`,
-  and `query` to Context object. These properties and methods all forward to
-  the request or response object.
+* #74: Added `method`, `path`, `status`, `accepts`, `push`,
+  `sendInformational`, and `query` to Context object. These properties and
+  methods all forward to the request or response object.
 * #78: By default the Application will return with a `404` response, unless a
   middleware updates the status or a body was set.
 * Tests will now error when a node version under 8.11.2 is used. They broke
@@ -413,15 +424,15 @@ Happy birthday Mom!
 ------------------
 
 * #4: Support for HTTP/2 push via the `Response.push()` method.
-* #62: It's now possible to do internal sub-requests without going through
-  the HTTP stack, with `Application.subRequest()`.
+* #62: It's now possible to do internal sub-requests without going through the
+  HTTP stack, with `Application.subRequest()`.
 * Added `MemoryRequest` and `MemoryResponse`.
 * #56: `Response.body` may now be `null`.
 * Renamed package to `@curveball/core`.
 
 
 0.3.1 (2018-06-29)
------------------
+------------------
 
 * Added License, Code of Conduct.
 * #52: Support for `Buffer` and arbitrary objects in `response.body`. The
@@ -431,8 +442,8 @@ Happy birthday Mom!
 0.3.0 (2018-06-26)
 ------------------
 
-* #5: Support for informational status codes such as `100 Continue` and
-  `103 Early Hints` for both HTTP/1 and HTTP/2.
+* #5: Support for informational status codes such as `100 Continue` and `103
+  Early Hints` for both HTTP/1 and HTTP/2.
 * #28: HTTP2 support.
 * #34: `Application` is now the default export.
 * #47: `Application.callback` now returns a callback instead of implementing

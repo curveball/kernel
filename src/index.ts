@@ -9,7 +9,8 @@ export{
   default as Application,
   invokeMiddlewares,
   Middleware,
-  middlewareCall
+  middlewareCall,
+  VERSION,
 } from './application.js';
 
 export {
@@ -27,5 +28,6 @@ export {
   getGlobalOrigin,
   setGlobalOrigin,
 } from './global-origin.js';
+
 
 export * as headerHelpers from './header-helpers.js';
