@@ -35,5 +35,5 @@ clean:
 
 dist/build: $(SOURCE_FILES)
 	npx tsc
-	sed -i 's/VERSION = '\''Curveball\/dev.*$$/VERSION = '\''Curveball\/$(VERSION) \(esm\)'\'';/g' dist/application.js
+	sed -i 's/VERSION = '\''Curveball\/dev.*$$/VERSION = '\''Curveball\/$(VERSION)'\'';/g' dist/application.js
 	touch dist/build
