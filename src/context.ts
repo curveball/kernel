@@ -1,4 +1,4 @@
-import * as WebSocket from 'ws';
+import WebSocket from 'ws';
 
 import { Middleware } from './application.js';
 import { HeadersInterface, HeadersObject } from './headers.js';

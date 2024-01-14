@@ -1,6 +1,15 @@
 Changelog
 =========
 
+1.0.0 (????-??-??)
+------------------
+
+* CommonJS support has been dropped. The previous version of this library had
+  compatibility with both CJS and ESM. The effort and pain no longer feels
+  worth it, so we're dropping CommonJS support.
+* Now requires Node 18.
+
+
 0.21.2 (2023-02-17)
 -------------------
 
@@ -140,6 +149,7 @@ Changelog
 -------------------
 
 Identical release as the previous alpha.
+
 
 
 
