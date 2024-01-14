@@ -4,6 +4,8 @@ Changelog
 1.0.0 (2024-01-14)
 ------------------
 
+Version 1.0, after all these years!
+
 * CommonJS support has been dropped. The previous version of this library had
   compatibility with both CJS and ESM. The effort and pain no longer feels
   worth it, so we're dropping CommonJS support.
