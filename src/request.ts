@@ -1,4 +1,4 @@
-import * as AcceptsImp from 'accepts';
+import Accepts from 'accepts';
 import * as http from 'node:http';
 import { Readable } from 'node:stream';
 import * as url from 'node:url';
@@ -8,12 +8,6 @@ import { HeadersInterface } from './headers.js';
 import { Headers } from './headers.js';
 
 export type Encoding = 'utf-8' | 'ascii' | 'hex';
-
-/**
- * We gotta do this ugly thing to make this work in CommonJS and ESM
- */
-// @ts-expect-error https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/64233
-const Accepts = AcceptsImp.default ?? AcceptsImp;
 
 /**
  * This interface represents an incoming server request.
@@ -153,7 +147,7 @@ export abstract class Request<T = unknown> {
       }
     };
 
-
+    // @ts-expect-error The types for the Accept package are probably not 100% correct for ESM.
     const result = new Accepts(mockRequestObj as http.IncomingMessage).type(types) as string|false;
     return result === false ? null : result;
 
