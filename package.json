@@ -2,12 +2,8 @@
   "name": "@curveball/kernel",
   "version": "0.21.2",
   "description": "Curveball is a framework writting in Typescript for Node.js",
-  "main": "cjs/index.js",
   "type": "module",
-  "exports": {
-    "require": "./cjs/index.js",
-    "import": "./esm/index.js"
-  },
+  "exports": "./dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
     "test": "make test",
@@ -23,8 +19,7 @@
   "files": [
     "package.json",
     "README.md",
-    "esm",
-    "cjs",
+    "dist",
     "LICENSE",
     "src"
   ],
