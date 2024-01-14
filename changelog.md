@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.0 (????-??-??)
+1.0.0 (2024-01-14)
 ------------------
 
 * CommonJS support has been dropped. The previous version of this library had
